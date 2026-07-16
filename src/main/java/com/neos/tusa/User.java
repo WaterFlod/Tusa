@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
@@ -21,4 +24,10 @@ public class User {
     private String name;
 
     private String telegramId;
+
+    @OneToMany(mappedBy = "admin")
+    private List<Party> adminParties = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "members")
+    private List<Party> userParties = new ArrayList<>();
 }
