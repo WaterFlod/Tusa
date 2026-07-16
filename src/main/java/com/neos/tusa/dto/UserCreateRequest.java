@@ -1,4 +1,4 @@
-package com.neos.tusa;
+package com.neos.tusa.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
