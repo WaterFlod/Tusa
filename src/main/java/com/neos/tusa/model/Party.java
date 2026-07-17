@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,5 +30,6 @@ public class Party {
     )
     private List<User> members = new ArrayList<>();
 
-    private LocalDate created_at;
+    @OneToMany(mappedBy = "party", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Bill> bills = new ArrayList<>();
 }

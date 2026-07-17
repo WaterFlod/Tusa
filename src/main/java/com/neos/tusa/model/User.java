@@ -30,4 +30,7 @@ public class User {
 
     @ManyToMany(mappedBy = "members")
     private List<Party> userParties = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Bill> bills = new ArrayList<>();
 }
