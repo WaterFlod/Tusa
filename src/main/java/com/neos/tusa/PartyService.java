@@ -3,6 +3,8 @@ package com.neos.tusa;
 import com.neos.tusa.dto.PartyCreateRequest;
 import com.neos.tusa.model.Party;
 import com.neos.tusa.model.User;
+import com.neos.tusa.repository.PartyRepository;
+import com.neos.tusa.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

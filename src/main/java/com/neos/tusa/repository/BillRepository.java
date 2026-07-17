@@ -1,4 +1,4 @@
-package com.neos.tusa;
+package com.neos.tusa.repository;
 
 import com.neos.tusa.model.Bill;
 import org.springframework.data.jpa.repository.JpaRepository;
