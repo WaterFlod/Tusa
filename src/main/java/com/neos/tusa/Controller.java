@@ -11,17 +11,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 @Validated
-public class UserController {
+public class Controller {
 
     private final UserRepository userRepository;
 
-    @PostMapping
-    public ResponseEntity<?> createUser(@Valid @RequestBody UserCreateRequest request) {
+    @PostMapping("/user")
+    public ResponseEntity<UserResponse> createUser(@Valid @RequestBody UserCreateRequest request) {
         User user = new User();
         user.setName(request.name());
         user.setTelegramId("telegram");
