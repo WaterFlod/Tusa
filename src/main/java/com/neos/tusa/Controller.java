@@ -41,20 +41,14 @@ public class Controller {
 
     @PostMapping("/parties")
     public ResponseEntity<?> createParty(@Valid @RequestBody PartyCreateRequest request) {
-        try {
-            Party party = partyService.createParty(request);
+        Party party = partyService.createParty(request);
 
-            PartyResponse response = new PartyResponse(
-                    party.getId(),
-                    party.getName(),
-                    party.getAdmin().getId()
-            );
+        PartyResponse response = new PartyResponse(
+                party.getId(),
+                party.getName(),
+                party.getAdmin().getId()
+        );
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
-        } catch (UserNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
-                    Map.of("error", e.getMessage())
-            );
-        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }
