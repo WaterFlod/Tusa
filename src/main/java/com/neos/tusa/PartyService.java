@@ -19,7 +19,7 @@ public class PartyService {
     @Transactional
     public Party createParty(PartyCreateRequest request) {
         User user = userRepository.findById(request.adminUserId())
-                .orElseThrow(() -> new UserNotFoundException("User not found"));
+                .orElseThrow(() -> new UserNotFoundException(request.adminUserId()));
         Party party = new Party();
         party.setName(request.name());
         party.setAdmin(user);
