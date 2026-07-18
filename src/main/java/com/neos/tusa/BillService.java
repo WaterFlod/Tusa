@@ -20,6 +20,8 @@ public class BillService {
     @Transactional
     public Bill createBill(AddBillRequest request) {
         if (!partyRepository.existsUserInParty(request.userId(), request.partyId())) {
+            if (!partyRepository.existsById(request.partyId())) throw new PartyNotFoundException(request.partyId());
+            if (!userRepository.existsById(request.userId())) throw new UserNotFoundException(request.userId());
             throw new UserNotInPartyException(request.userId(), request.partyId());
         }
 
