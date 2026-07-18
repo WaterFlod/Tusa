@@ -16,4 +16,10 @@ public class GlobalExceptionHandler {
         ErrorResponse error = new ErrorResponse("USER_NOT_FOUND", ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
+
+    @ExceptionHandler(UserNotInPartyException.class)
+    public ResponseEntity<ErrorResponse> handleUserNotInParty(UserNotInPartyException ex) {
+        ErrorResponse error = new ErrorResponse("USER_NOT_IN_PARTY", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+    }
 }
