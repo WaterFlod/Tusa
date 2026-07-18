@@ -1,6 +1,9 @@
 package com.neos.tusa;
 
 import com.neos.tusa.dto.ErrorResponse;
+import com.neos.tusa.exception.PartyNotFoundException;
+import com.neos.tusa.exception.UserNotFoundException;
+import com.neos.tusa.exception.UserNotInPartyException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

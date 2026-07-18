@@ -1,4 +1,4 @@
-package com.neos.tusa;
+package com.neos.tusa.exception;
 
 import lombok.Getter;
 

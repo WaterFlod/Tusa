@@ -1,6 +1,9 @@
 package com.neos.tusa;
 
 import com.neos.tusa.dto.AddBillRequest;
+import com.neos.tusa.exception.PartyNotFoundException;
+import com.neos.tusa.exception.UserNotFoundException;
+import com.neos.tusa.exception.UserNotInPartyException;
 import com.neos.tusa.model.Bill;
 import com.neos.tusa.repository.BillRepository;
 import com.neos.tusa.repository.PartyRepository;
