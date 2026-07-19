@@ -25,6 +25,8 @@ public class User {
 
     private String telegramId;
 
+    private String chatId;
+
     @OneToMany(mappedBy = "admin")
     private List<Party> adminParties = new ArrayList<>();
 

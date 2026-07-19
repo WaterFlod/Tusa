@@ -22,8 +22,8 @@ public class DataLoader implements CommandLineRunner {
     @Transactional
     public void run(String... args) {
         if (userRepository.count() == 0) {
-            User user1 = createUser("Alex", "1");
-            User user2 = createUser("Matt", "2");
+            User user1 = createUser("Alex", "1", "935763589");
+            User user2 = createUser("Matt", "2", "935763589");
             Party party = createParty("Birtday", user1, List.of(user1, user2));
 
             userRepository.saveAll(List.of(user1, user2));
@@ -31,10 +31,11 @@ public class DataLoader implements CommandLineRunner {
         }
     }
 
-    private User createUser(String name, String telegramId) {
+    private User createUser(String name, String telegramId, String chatId) {
         User user = new User();
         user.setName(name);
         user.setTelegramId(telegramId);
+        user.setChatId(chatId);
         return user;
     }
 
