@@ -14,7 +14,7 @@ public class TusaBot extends TelegramLongPollingBot {
     private final String username;
 
     public TusaBot(@Value("${bot.token}") String botToken,
-                   @Value("${bot.username") String username) {
+                   @Value("${bot.username}") String username) {
         this.botToken = botToken;
         this.username = username;
     }
